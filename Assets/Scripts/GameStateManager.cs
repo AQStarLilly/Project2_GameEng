@@ -11,7 +11,8 @@ public class GameStateManager : MonoBehaviour
     {
         MainMenu_State,   // The game is at the main menu
         Gameplay_State,   // The game is actively being played
-        Paused_State      // The game is paused
+        Paused_State,      // The game is paused
+        Options_State       //The game is at the options Menu
     }
 
 
@@ -94,6 +95,12 @@ public class GameStateManager : MonoBehaviour
                 // TODO: Add logic for pausing the game (e.g., stop player movement, show pause menu)
                 Time.timeScale = 0;
                 break;
+
+            case GameState.Options_State:
+                gameManager.uIManager.EnableOptionsMenuUI();
+                // TODO: Add logic for pausing the game (e.g., stop player movement, show pause menu)
+                Time.timeScale = 0;
+                break;
         }
     }
 
@@ -105,6 +112,11 @@ public class GameStateManager : MonoBehaviour
     public void ChangeStateToGamePlay()
     {
         ChangeState(GameState.Gameplay_State);       
+    }
+
+    public void ChangeStateToOptions()
+    {
+        ChangeState(GameState.Options_State);
     }
 
     public void OnApplicationQuit()
