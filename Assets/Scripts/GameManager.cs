@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+
     public GameStateManager gameStateManager;
     public UIManager uIManager;
-    
-
 
 }
