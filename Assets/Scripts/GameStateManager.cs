@@ -19,6 +19,9 @@ public class GameStateManager : MonoBehaviour
     // Property to store the current game state, accessible publicly but modifiable only within this class
     public GameState currentState { get; private set; }
 
+    // Added variable to track the last state for "back" functionality
+    private GameState lastState;
+
     // Debugging variables to store the current and last game state as strings for easier debugging in the Inspector
     [SerializeField] private string currentStateDebug;
     [SerializeField] private string lastStateDebug;
@@ -33,7 +36,8 @@ public class GameStateManager : MonoBehaviour
     public void ChangeState(GameState newState)
     {
         // Store the current state as the last state before changing it
-        lastStateDebug = currentState.ToString();
+        lastState = currentState;
+        lastStateDebug = lastState.ToString();
 
         // Assign the new state to currentState
         currentState = newState;
@@ -117,6 +121,11 @@ public class GameStateManager : MonoBehaviour
     public void ChangeStateToOptions()
     {
         ChangeState(GameState.Options_State);
+    }
+
+    public void GoBack()
+    {
+        ChangeState(lastState);
     }
 
     public void OnApplicationQuit()
