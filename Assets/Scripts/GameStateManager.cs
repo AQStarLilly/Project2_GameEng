@@ -84,27 +84,32 @@ public class GameStateManager : MonoBehaviour
         {
             case GameState.MainMenu_State:
                 gameManager.uIManager.EnableMainMenuUI();
-                // TODO: Add logic for when the game enters the Main Menu (e.g., show UI)
                 Time.timeScale = 0;
                 break;
 
             case GameState.Gameplay_State:
                 gameManager.uIManager.EnableGameplayUI();               
-                // TODO: Add logic for starting/resuming the game (e.g., enable player movement)
                 Time.timeScale = 1;
                 break;
 
             case GameState.Paused_State:
                 gameManager.uIManager.EnablePausedMenuUI();
-                // TODO: Add logic for pausing the game (e.g., stop player movement, show pause menu)
                 Time.timeScale = 0;
                 break;
 
             case GameState.Options_State:
                 gameManager.uIManager.EnableOptionsMenuUI();
-                // TODO: Add logic for pausing the game (e.g., stop player movement, show pause menu)
                 Time.timeScale = 0;
                 break;
+        }
+
+        if (state == GameState.Gameplay_State)
+        {
+            Cursor.visible = false;
+        }
+        else
+        {
+            Cursor.visible = true;
         }
     }
 
