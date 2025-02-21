@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameStateManager : MonoBehaviour
 {
-    public GameManager gameManager;    
+    public Singleton gameManager;    
 
     // Enum representing different game states
     public enum GameState

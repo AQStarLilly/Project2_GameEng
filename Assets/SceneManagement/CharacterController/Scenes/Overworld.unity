@@ -3048,7 +3048,6 @@ GameObject:
   m_Component:
   - component: {fileID: 706664819}
   - component: {fileID: 706664818}
-  - component: {fileID: 706664820}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3068,6 +3067,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38cd7a88249f8ef469bfbf853befe346, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputManager: {fileID: 1082943597}
+  gameStateManager: {fileID: 1911439155}
+  uIManager: {fileID: 526855724}
   levelManager: {fileID: 53262782}
   player: {fileID: 1796898154}
 --- !u!4 &706664819
@@ -3089,20 +3091,6 @@ Transform:
   - {fileID: 1796898152}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &706664820
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 706664817}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 819b086501bbba249b3f6fba98cfe061, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameStateManager: {fileID: 1911439155}
-  uIManager: {fileID: 526855724}
 --- !u!1 &724794346
 GameObject:
   m_ObjectHideFlags: 0
@@ -65365,6 +65353,17 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &1082943597 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8433534345075498729, guid: 7c7645e5d0cb8cf4bb8be56bc87ebf77, type: 3}
+  m_PrefabInstance: {fileID: 598651805}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85cf10b335a4efa4baa365fe566dc946, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1151373390
 GameObject:
   m_ObjectHideFlags: 0
@@ -88603,7 +88602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 382d8b5ce63842a4080e6e004a178263, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 706664820}
+  gameManager: {fileID: 706664818}
   currentStateDebug: 
   lastStateDebug: 
 --- !u!4 &1911439156

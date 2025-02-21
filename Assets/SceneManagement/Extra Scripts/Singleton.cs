@@ -5,6 +5,9 @@ public class Singleton : MonoBehaviour
 {
     public static Singleton Instance { get; private set; }
 
+    public InputManager inputManager;
+    public GameStateManager gameStateManager;
+    public UIManager uIManager;
     public LevelManager levelManager;
     public PlayerMovement player;
 
