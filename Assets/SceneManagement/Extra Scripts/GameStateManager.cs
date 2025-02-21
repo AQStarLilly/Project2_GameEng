@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameStateManager : MonoBehaviour
 {
@@ -82,7 +83,7 @@ public class GameStateManager : MonoBehaviour
     {
         switch (state)
         {
-            case GameState.MainMenu_State:
+            case GameState.MainMenu_State:                
                 gameManager.uIManager.EnableMainMenuUI();
                 Time.timeScale = 0;
                 break;
@@ -115,6 +116,7 @@ public class GameStateManager : MonoBehaviour
 
     public void ChangeStateToMainMenu()
     {
+        SceneManager.LoadScene(0);
         ChangeState(GameState.MainMenu_State);       
     }
 
