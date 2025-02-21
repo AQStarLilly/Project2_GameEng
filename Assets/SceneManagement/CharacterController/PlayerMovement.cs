@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -49,6 +50,15 @@ public class PlayerMovement : MonoBehaviour
     void HandlePlayerMovement()
     {
         playerRigidbody.MovePosition(playerRigidbody.position + moveVector * currentSpeed * Time.fixedDeltaTime);
+    }
+
+    public void ResetPosition()
+    {
+        GameObject spawnPoint = GameObject.FindGameObjectWithTag("SpawnPoint");
+        if(spawnPoint != null)
+        {
+            transform.position = spawnPoint.transform.position;
+        }       
     }
 
     void OnDisable()
